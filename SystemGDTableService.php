@@ -15,7 +15,7 @@ class SystemGDTableService
     /**
      * 字体路径
      */
-    private $str_font_path     = '/file/simsun.ttc';
+    private $str_font_path     = '/simsun.ttc';
     /**
      * 根路径
      */
