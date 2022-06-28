@@ -9,10 +9,6 @@
 
 namespace App\Services;
 
-
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Log;
-
 class SystemGDTableService
 {
 
@@ -93,7 +89,7 @@ class SystemGDTableService
         //字体路径
         $this->str_font_path = $this->str_base_path . $this->str_font_path;
         //图片名称
-        $this->str_file_name = MD5(microtime()) . '_' . Carbon::now()->format('Ymd') . '.png';
+        $this->str_file_name = MD5(microtime()) . '_' . date('Ymd') . '.png';
     }
 
     /**
@@ -347,7 +343,7 @@ class SystemGDTableService
             }
             unlink($this->str_save_path); return true;
         } catch (\Exception $e){
-            Log::error('删除图片['.$this->str_save_path.']异常,' . $e->getMessage());
+            echo '删除图片['.$this->str_save_path.']异常,' . $e->getMessage();
         }
         return false;
     }
